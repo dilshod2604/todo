@@ -8,8 +8,8 @@ interface InputValue {
 const TodoInput = () => {
   const { register, handleSubmit } = useForm<InputValue>();
   const [postToDo] = usePostToDoMutation();
-  const onSubmit: SubmitHandler<InputValue> = (value) => {
-    postToDo({
+  const onSubmit: SubmitHandler<InputValue> =async (value) => {
+    await postToDo({
       title: value.title,
       isChecked: false,
     });

@@ -22,6 +22,7 @@ const api = index.injectEndpoints({
           url: `/${id}`,
           method: "DELETE",
         }),
+        invalidatesTags:["todo"]
       }
     ),
     editTodo: build.mutation<TODO.EditToDoResponse, TODO.EditToDoRequest>({
